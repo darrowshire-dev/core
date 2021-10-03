@@ -177,8 +177,8 @@ void HonorMaintenancer::InactiveDecayRankPoints()
             continue;
 
         auto& weeklyScore = itrWS->second;
-
-        weeklyScore.newRp = finiteAlways(CalculateRpDecay(0, weeklyScore.oldRp));
+		//here we override the function that applies the decay on rankingpoints when not participating in PVP (below 15 hks). We just call the weeklyScore.oldRP
+        weeklyScore.newRp = weeklyScore.oldRp; //finiteAlways(CalculateRpDecay(0, weeklyScore.oldRp));
     }
 }
 
