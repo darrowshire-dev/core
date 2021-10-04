@@ -547,7 +547,7 @@ float HonorMaintenancer::CalculateRpEarning(float cp, HonorScores sc)
 
 float HonorMaintenancer::CalculateRpDecay(float rpEarning, float rp)
 {
-    float decay = floor((0.2f * rp) + 0.5f);
+    float decay = floor((0.08f * rp) + 0.5f); //lowered the calculating honordecay to 8%, was 20% (0.20f)
     float delta = rpEarning - decay;
 
     if (delta < 0)
